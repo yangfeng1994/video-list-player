@@ -2,6 +2,8 @@ plugins {
     id 'com.android.library'
     id 'kotlin-android'
 }
+group = 'com.github.yangfeng1994'
+version = '1.0.0'
 
 android {
     compileSdk 30
