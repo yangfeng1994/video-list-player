@@ -1,2 +1,3 @@
 # video-list-player
-使用RecyclerView+EXOplayer 模仿抖音上下无缝滑动视频播放。使用没有使用ViewPager2的原因是Fragment太重。内存消耗太大
+使用RecyclerView+EXOplayer 模仿抖音上下无缝滑动视频播放。使用没有使用ViewPager2的原因是Fragment太重，内存消耗太大
+有一点需要注意，在有键盘弹出的界面，RecyclerView的 onScrollStateChanged 监听方法，键盘弹出时，会被触发调用
