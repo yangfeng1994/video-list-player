@@ -37,6 +37,11 @@ recyclerViewScrollerDetection.attachToSnapHelper(snapHelper)
 recyclerViewScrollerDetection.addOnScrollListener(mRecyclerView)
 ```
 
+```
+setFirstActive(boolean) 首次展示RecyclerView数据的时候，是否调用setActive方法
+
+```
+
 ## setActive：当每次选中itemView的时候会调用
 ```
 currentView: View?  当前选中的 itemView
