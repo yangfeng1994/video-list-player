@@ -10,6 +10,7 @@
 
 demo中有配合使用ExoPlayer 进行视频上下分页播放
 
+![image](https://github.com/yangfeng1994/Android-FingerprintVerify/blob/dev/app/pic/finger_gif.gif)
 
 # 使用方法
 第一步
