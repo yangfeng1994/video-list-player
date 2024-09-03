@@ -9,6 +9,7 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.exoplayer2.C
 import com.google.android.exoplayer2.MediaItem
 import com.google.android.exoplayer2.MediaMetadata
 import com.google.android.exoplayer2.Player
@@ -17,6 +18,7 @@ import com.google.android.exoplayer2.analytics.AnalyticsListener
 import com.google.android.exoplayer2.source.ConcatenatingMediaSource
 import com.google.android.exoplayer2.source.MediaSource
 import com.google.android.exoplayer2.source.ProgressiveMediaSource
+import com.google.android.exoplayer2.ui.AspectRatioFrameLayout
 import com.google.android.exoplayer2.ui.PlayerView
 import com.google.android.exoplayer2.upstream.DataSource
 import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter
@@ -46,6 +48,7 @@ class MainActivity : AppCompatActivity(),
     var currentView: View? = null
     val recyclerViewScrollerDetection = RecyclerViewScrollerDetection()
     override fun onCreate(savedInstanceState: Bundle?) {
+        dismissStatusBar()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         onInitView()
@@ -57,6 +60,8 @@ class MainActivity : AppCompatActivity(),
      */
     private fun onInitView() {
         simpleExoPlayer.repeatMode = Player.REPEAT_MODE_ONE
+        simpleExoPlayer.setVideoScalingMode(C.VIDEO_SCALING_MODE_SCALE_TO_FIT_WITH_CROPPING)
+        playerView.resizeMode = AspectRatioFrameLayout.RESIZE_MODE_FILL
         playerView.player = simpleExoPlayer
         simpleExoPlayer.addAnalyticsListener(object : AnalyticsListener {
             override fun onRenderedFirstFrame(
@@ -173,5 +178,9 @@ class MainActivity : AppCompatActivity(),
         if (simpleExoPlayer.isPlaying) {
             simpleExoPlayer.pause()
         }
+    }
+    private fun dismissStatusBar() {
+        BarUtils.transparentStatusBar(this)
+        BarUtils.setNavBarVisibility(this, false,this)
     }
 }
