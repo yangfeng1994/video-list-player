@@ -10,7 +10,7 @@
 
 demo中有配合使用ExoPlayer 进行视频上下分页播放
 
-![image](https://github.com/yangfeng1994/video-list-player/blob/main/2024_08_09_17_10_16.gif)
+![image](https://github.com/yangfeng1994/video-list-player/blob/main/app/pic/2024_08_09_17_10_16.gif)
 <img src="/app/pic/b21fbb563b1d296d.jpg" alt="图-2：finger_pic_screen" width="380px"></img>
 # 使用方法
 第一步
